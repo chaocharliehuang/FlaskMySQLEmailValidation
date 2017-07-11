@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>Email Validation</title>
+        <style>
+            .flash_msg {
+                background-color: red;
+                color: white;
+                padding: 10px;
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="flash_msg"></div>
+        <form action="/process" method="POST">
+            <label for="email">Email Address: </label>
+            <input type="text" name="email" id="email">
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>

@@ -36,6 +36,12 @@
             <tr>
                 <td>{{ email['email'] }}</td>
                 <td>{{ email['created'] }}</td>
+                <td>
+                    <form action="/delete" method="POST">
+                        <input type="hidden" name="email" value={{ email['email'] }}>
+                        <input type="submit" value="Delete">
+                    </form>
+                </td>
             </tr>
             {% endfor %}
         </table>

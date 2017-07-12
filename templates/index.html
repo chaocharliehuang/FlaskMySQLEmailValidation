@@ -7,11 +7,22 @@
                 color: white;
                 padding: 10px;
                 border: 1px solid black;
+                width: 200px;
+                text-align: center;
+                margin-bottom: 10px;
             }
         </style>
     </head>
     <body>
-        <div class="flash_msg"></div>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            {% for message in messages %}
+                <div class="flash_msg">
+                    <p>{{ message }}</p>
+                </div>
+            {% endfor %}
+            {% endif %}
+        {% endwith %}
         <form action="/process" method="POST">
             <label for="email">Email Address: </label>
             <input type="text" name="email" id="email">
